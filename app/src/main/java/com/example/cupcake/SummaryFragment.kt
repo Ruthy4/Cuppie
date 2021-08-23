@@ -70,11 +70,17 @@ class SummaryFragment : Fragment() {
             sharedViewModel.date.value.toString(),
             sharedViewModel.price.value.toString()
         )
+        /**
+         * intenet to send order to email app
+         * */
         val intent = Intent(Intent.ACTION_SEND)
             .setType("text/plain")
             .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.new_cupcake_order))
             .putExtra(Intent.EXTRA_TEXT, orderSummary)
 
+        /**
+         * starts intent if a desired app was found. prevents the app from crashing if no desired app was found
+         * */
         if (activity?.packageManager?.resolveActivity(intent, 0) != null) {
             startActivity(intent)
         }

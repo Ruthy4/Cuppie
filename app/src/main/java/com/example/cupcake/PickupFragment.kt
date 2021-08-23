@@ -64,6 +64,9 @@ class PickupFragment : Fragment() {
        findNavController().navigate(R.id.action_pickupFragment_to_summaryFragment)
     }
 
+    /**
+     * reset order onClock of cancel button
+     * */
     fun cancel(){
         sharedViewModel.resetOrder()
         findNavController().navigate(R.id.action_pickupFragment_to_startFragment)
