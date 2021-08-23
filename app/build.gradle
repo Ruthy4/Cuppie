@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
 }
-
+task wrapper(type: Wrapper) { gradleVersion = '2.14.1' }
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
